@@ -1,0 +1,40 @@
+.wrap {
+  background: var(--red);
+  overflow: hidden;
+  padding: 15px 0;
+  white-space: nowrap;
+}
+.wrapLime { background: var(--lime); }
+
+.track {
+  display: inline-flex;
+  animation: marquee 28s linear infinite;
+}
+.trackLime {
+  animation-direction: reverse;
+  animation-duration: 34s;
+}
+
+.item {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+.wrapLime .item { color: var(--black); }
+
+.sep {
+  font-size: 10px;
+  opacity: 0.4;
+}
+.wrapLime .sep { color: rgba(0,0,0,0.35); }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

@@ -1,0 +1,200 @@
+.red  { color: var(--red);  }
+.lime { color: var(--lime); }
+
+/* ── Body layout ── */
+.body {
+  background: var(--black);
+  padding: 80px 56px 112px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ── Left info ── */
+.info { position: sticky; top: 100px; }
+
+.infoTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 0.97;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.infoBody {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin-bottom: 48px;
+  max-width: 400px;
+}
+
+.points { list-style: none; margin-bottom: 48px; }
+
+.point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.pointIcon {
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+.pointIconRed  { background: rgba(236,28,36,0.12); border-color: rgba(236,28,36,0.25); }
+.pointIconLime { background: rgba(194,236,28,0.12); border-color: rgba(194,236,28,0.25); }
+
+.pointTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+.pointBody { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+.promise {
+  background: var(--gray2);
+  padding: 28px;
+  border-left: 3px solid var(--lime);
+}
+.promise p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin: 0; }
+.promiseBold { color: var(--lime); font-weight: 700; }
+
+/* ── Right form ── */
+.formWrap {
+  background: var(--gray2);
+  padding: 48px 44px;
+  border-top: 3px solid var(--red);
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus { border-color: var(--lime); }
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+.formGroup select { cursor: pointer; }
+.formGroup select option { background: var(--gray2); }
+.formGroup textarea { resize: vertical; min-height: 120px; }
+
+.formCheck {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.formCheck input[type='checkbox'] {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--lime);
+  cursor: pointer;
+}
+
+.formCheck label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.privacyLink { color: var(--lime); }
+
+.submit {
+  width: 100%;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.submit:hover { background: #ff2a32; transform: translateY(-2px); }
+
+/* ── Success state ── */
+.success {
+  text-align: center;
+  padding: 48px 24px;
+}
+.successIcon { font-size: 48px; margin-bottom: 16px; }
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  color: var(--lime);
+  margin-bottom: 16px;
+}
+.successBody {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .body        { grid-template-columns: 1fr; padding: 56px 24px 80px; gap: 48px; }
+  .info        { position: static; }
+  .formWrap    { padding: 36px 28px; }
+  .formRow     { grid-template-columns: 1fr; }
+}

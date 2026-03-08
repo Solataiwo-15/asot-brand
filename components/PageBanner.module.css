@@ -1,0 +1,33 @@
+.banner {
+  padding: 140px 56px 80px;
+  background: var(--gray);
+  position: relative;
+  overflow: hidden;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--red), var(--lime));
+}
+
+.bgWord {
+  position: absolute;
+  right: -20px;
+  bottom: -40px;
+  font-family: var(--font-display);
+  font-size: 260px;
+  line-height: 1;
+  color: rgba(236,28,36,0.05);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+}
+
+.title { position: relative; z-index: 1; }
+
+@media (max-width: 960px) {
+  .banner  { padding: 120px 24px 60px; }
+  .bgWord  { display: none; }
+}

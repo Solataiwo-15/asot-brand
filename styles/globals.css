@@ -1,0 +1,138 @@
+/* ============================================================
+   ASOT GLOBAL STYLES
+============================================================ */
+
+:root {
+  --black:   #000000;
+  --red:     #EC1C24;
+  --lime:    #C2EC1C;
+  --white:   #FFFFFF;
+  --gray:    #111111;
+  --gray2:   #1A1A1A;
+  --gray3:   #2A2A2A;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Figtree', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ─── Buttons ─── */
+.btn-red {
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-red:hover { background: #ff2a32; transform: translateY(-2px); }
+
+.btn-lime {
+  background: var(--lime);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-lime:hover { background: #d4ff22; transform: translateY(-2px); }
+
+.btn-outline-w {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  display: inline-block;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-outline-w:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ─── Eyebrow label ─── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--lime);
+  flex-shrink: 0;
+}
+.eyebrow.red-ey { color: var(--red); }
+.eyebrow.red-ey::before { background: var(--red); }
+.eyebrow.white-ey { color: rgba(255,255,255,0.65); }
+.eyebrow.white-ey::before { background: rgba(255,255,255,0.65); }
+
+/* ─── Section title ─── */
+.sec-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 0.97;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.sec-title .red  { color: var(--red); }
+.sec-title .lime { color: var(--lime); }
+
+.sec-body {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+/* ─── CTA button row ─── */
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cta-row.centered { justify-content: center; }
